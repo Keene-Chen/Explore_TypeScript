@@ -7,7 +7,7 @@ export interface Result<T = any> {
   message?: string;
 }
 
-export class Request {
+export class useAxiosApi {
   instance: AxiosInstance;
   baseConfig: AxiosRequestConfig = {
     baseURL: import.meta.env.VITE_BASE_URL || '',
@@ -94,4 +94,4 @@ export class Request {
   }
 }
 
-export default new Request({});
+export default new useAxiosApi({});

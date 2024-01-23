@@ -1,16 +1,13 @@
 <script lang="ts" setup>
-import Request from '@/utils/request';
+import useAxiosApi from '@/utils/useAxiosApi';
 import { ref } from 'vue';
 
-const data = ref();
-
-(async () => {
-  const  res  = await Request.get('https://jsonplaceholder.typicode.com/todos/p1');
-  data.value = res;
+const doGet = async () => {
+  const res = await useAxiosApi.get('https://jsonplaceholder.typicode.com/todos/1');
   console.log(res);
-})();
+};
 </script>
 
 <template>
-  {{ data }}
+  <button @click="doGet">doGet</button>
 </template>
