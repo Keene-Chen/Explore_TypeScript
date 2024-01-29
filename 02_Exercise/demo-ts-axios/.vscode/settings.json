@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "public": true,
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    ".gitignore": "index.html,README.md,.prettierrc.json,.eslintrc.cjs,",
+    "vite.config.ts": ".env,env.d.ts"
+  }
+}
