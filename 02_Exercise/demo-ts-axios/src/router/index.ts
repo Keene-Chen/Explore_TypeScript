@@ -13,8 +13,17 @@ const routes = [
   },
   {
     path: '/axios',
-    name: 'axios',
-    component: () => import('@/views/axios/AxiosView.vue')
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/axios/AxiosView.vue')
+      },
+      {
+        path: 'file_upload',
+        name: 'file_upload',
+        component: () => import('@/views/axios/AxiosFileUpload.vue')
+      }
+    ]
   }
 ];
 
