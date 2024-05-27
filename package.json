@@ -1,0 +1,37 @@
+{
+  "name": "explore_typescript",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "explore_typescript",
+  "author": "KeeneChen <keenechen@qq.com>",
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "nodejs",
+    "typescript"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "clean": "node scripts/clean.js",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --cache --fix",
+    "postinstall": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.18.1",
+    "eslint": "^9.3.0",
+    "execa": "^9.1.0",
+    "lint-staged": "^15.2.5",
+    "picocolors": "^1.0.1",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.7",
+    "simple-git-hooks": "^2.11.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "node scripts/verify-commit.js"
+  },
+  "lint-staged": {
+    "*": "eslint --cache --fix"
+  }
+}
