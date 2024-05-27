@@ -1,22 +1,22 @@
 {
   "name": "demo-mqtt",
-  "module": "index.ts",
   "type": "module",
+  "module": "index.ts",
   "scripts": {
     "dev": "bun run src/index.ts"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@figliolia/chalk-animation": "^1.0.3",
-    "@types/figlet": "^1.5.8",
-    "@types/gradient-string": "^1.1.6",
-    "figlet": "^1.7.0",
-    "gradient-string": "^2.0.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "mqtt": "^5.6.1"
+  },
+  "devDependencies": {
+    "@figliolia/chalk-animation": "^1.0.3",
+    "@types/bun": "latest",
+    "@types/figlet": "^1.5.8",
+    "@types/gradient-string": "^1.1.6",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2"
   }
 }

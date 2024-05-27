@@ -1,22 +1,22 @@
 {
   "name": "serialization",
+  "type": "module",
   "version": "1.0.0",
-  "author": "",
-  "main": "index.js",
-  "devDependencies": {
-    "@types/node": "^20.12.12",
-    "typescript": "^5.4.5"
-  },
   "description": "",
-  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "dependencies": {
     "iarna-toml-esm": "^3.0.5",
     "json5": "^2.2.3",
     "yaml": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5"
   }
 }

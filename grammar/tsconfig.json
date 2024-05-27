@@ -2,14 +2,14 @@
   "compilerOptions": {
     // 目标编译版本
     "target": "ESNext",
-    // 模块系统
-    "module": "ESNext",
     // baseUrl用于解析模块的基本目录
     "baseUrl": ".",
-    // 输出目录
-    "outDir": "dist",
+    // 模块系统
+    "module": "ESNext",
     // 开启严格模式
     "strict": true,
+    // 输出目录
+    "outDir": "dist",
     // 允许使用es模块语法
     "esModuleInterop": true
   }
