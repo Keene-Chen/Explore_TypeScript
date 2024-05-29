@@ -1,7 +1,7 @@
 {
   "name": "explore_typescript",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "explore_typescript",
   "author": "KeeneChen <keenechen@qq.com>",
@@ -15,7 +15,8 @@
     "clean": "node scripts/clean.js",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
-    "postinstall": "simple-git-hooks"
+    "postinstall": "simple-git-hooks",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.18.1",
