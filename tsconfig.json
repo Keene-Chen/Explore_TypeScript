@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 目标编译版本
+    "baseUrl": ".", // baseUrl用于解析模块的基本目录
+    "module": "ESNext", // 模块系统
+    "strict": true, // 开启严格模式
+    "outDir": "dist", // 输出目录
+    "esModuleInterop": true, // 允许使用es模块语法
+    "allowJs": true
+  }
+}
