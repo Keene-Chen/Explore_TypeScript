@@ -1,0 +1,50 @@
+x-common-healthcheck: &common-healthcheck
+  test: [CMD, /opt/emqx/bin/emqx, ctl, status]
+  interval: 5s
+  timeout: 25s
+  retries: 5
+
+networks:
+  emqx-network:
+    external: true
+
+volumes:
+  node1-data: {}
+  node2-data: {}
+
+services:
+  emqx-node1:
+    image: emqx/emqx-enterprise:5.7.0
+    container_name: emqx-node1
+    environment:
+      - EMQX_NODE_NAME=emqx@node1.keenechen.cn
+      - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
+      - 'EMQX_CLUSTER__STATIC__SEEDS=[emqx@node1.keenechen.cn,emqx@node2.keenechen.cn]'
+    healthcheck: *common-healthcheck
+    networks:
+      emqx-network:
+        aliases:
+          - node1.keenechen.cn
+    ports:
+      - 1883:1883
+      - 8083:8083
+      - 8084:8084
+      - 8883:8883
+      - 18083:18083
+    volumes:
+      - node1-data:/opt/emqx
+
+  emqx-node2:
+    image: emqx/emqx-enterprise:5.7.0
+    container_name: emqx-node2
+    environment:
+      - EMQX_NODE_NAME=emqx@node2.keenechen.cn
+      - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
+      - 'EMQX_CLUSTER__STATIC__SEEDS=[emqx@node1.keenechen.cn,emqx@node2.keenechen.cn]'
+    healthcheck: *common-healthcheck
+    networks:
+      emqx-network:
+        aliases:
+          - node2.keenechen.cn
+    volumes:
+      - node2-data:/opt/emqx
