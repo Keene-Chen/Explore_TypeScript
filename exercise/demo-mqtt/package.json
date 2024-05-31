@@ -15,6 +15,7 @@
     "@types/bun": "latest",
     "@types/figlet": "^1.5.8",
     "@types/gradient-string": "^1.1.6",
+    "@types/node": "^20.12.13",
     "figlet": "^1.7.0",
     "gradient-string": "^2.0.2"
   }
